@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import iTero from './sections/itero';
+import Itero from './sections/Itero';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <iTero />
+        <Itero />
       </div>
     );
   }
