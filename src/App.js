@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Itero from './sections/Itero';
+import Invisalign from './sections/Invisalign';
 
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Itero />
+        <Invisalign />
       </div>
     );
   }
