@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ImageInvisalign from '../media/images/invisalign.jpg'
 
+
 const Title = styled.h1`
   font-size: 2.5em;
   text-align: center;
@@ -9,12 +10,22 @@ const Title = styled.h1`
 `;
 
 const DivContainer = styled.div`  
-  height: 400px;
+  height: 900px;
 `;
 
 const Divs = styled.div`
   margin: 0 auto;
-  width: 70%;
+  width: 50%;
+`;
+
+const Video = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1300px;
 `;
 
 const Image = styled.img`
@@ -44,8 +55,17 @@ function Invisalign() {
           O tratamento é realizado com alinhadores dentários transparentes feitos por computador, nos Estados Unidos, e que são bastante imperceptíveis, 
           além de muito confortáveis. O Dr. Fernando Franco é classificado como TOP INVISALIGN PROVIDER, ou seja, 
           ele é um ortodontista bastante diferenciado no uso da técnica, aumentando ainda mais a qualidade dos resultados de seus pacientes.
-        </TextContainer>
+        </TextContainer>        
       </Divs>
+      <Video>
+        <iframe width="890" 
+          height="500" 
+          src="https://www.youtube.com/embed/ZKd38Ku7JNQ" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+        </Video>
     </DivContainer>                      
   );
 }

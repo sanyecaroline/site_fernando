@@ -9,9 +9,16 @@ const Title = styled.h1`
 `;
 
 const DivContainer = styled.div`
-  display: flex;
-  flex-direction: row;
   height: 400px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+`;
+
+const DivFundo = styled.div` 
+  height: 400px;
+  display: flex;
+  align-itens: center;
 `;
 
 const Divs = styled.div`
@@ -31,6 +38,7 @@ const TextContainer = styled.p`
 
 function Itero() {
   return (  
+    <DivFundo>
     <DivContainer id="iTero"> 
       <Divs>
         <Title>
@@ -49,7 +57,8 @@ function Itero() {
       <Divs>
         <Image src={ImageiTero} />
       </Divs>
-    </DivContainer>                      
+    </DivContainer>
+    </DivFundo>                      
   );
 }
 

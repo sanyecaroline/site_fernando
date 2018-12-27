@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import Itero from './sections/Itero';
 import Invisalign from './sections/Invisalign';
+import Evaluation from './sections/Evaluation';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Itero />
         <Invisalign />
+        <Evaluation />
+        <Itero />        
       </div>
     );
   }
