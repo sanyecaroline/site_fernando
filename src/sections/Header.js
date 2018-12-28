@@ -1,8 +1,23 @@
 import React from 'react';
 
+import style from 'styled-components';
+
+import Menu from './Menu';
+import TopHeader from './TopHeader';
+
+import { zHeader } from '../utils/zIndex';
+
+const HeaderContainer = style.header`
+  height: auto;  
+  z-index: ${zHeader};  
+`;
+
 function Header(props) {
-  return (
-    <h1>Header</h1>
+  return (    
+    <HeaderContainer>
+      <TopHeader />
+      <Menu />
+    </HeaderContainer>
   );
 }
 
