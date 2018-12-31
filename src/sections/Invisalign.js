@@ -1,13 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ImageInvisalign from '../media/images/invisalign.jpg'
-
-
-const Title = styled.h1`
-  font-size: 2.5em;
-  text-align: center;
-  color: #00004d;
-`;
+import Title from '../components/Title';
 
 const DivContainer = styled.div`  
   height: 900px;

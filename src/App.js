@@ -3,7 +3,8 @@ import Itero from './sections/Itero';
 import Invisalign from './sections/Invisalign';
 import Evaluation from './sections/Evaluation';
 import Header from './sections/Header';
-import Contact from './sections/Contact'
+import Tips from './sections/Tips';
+import Contact from './sections/Contact';
 
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
         <Invisalign />
         <Evaluation />
         <Itero /> 
+        <Tips />
         <Contact />       
       </div>
     );
