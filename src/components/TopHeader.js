@@ -12,7 +12,6 @@ const Container = styled.div`
   display: flex;  
   flex-direction: row;
   background-color: #293c67;
-  background-color: rgba(41,60,103,1);
   border-bottom: 0px none #323232;
   color: #fff;  
   line-height: 38px;  
@@ -36,8 +35,9 @@ const TopHeaderRight = styled.div`
   ${mobile(css`
     width: 100%;
     justify-content: center;
+    text-align: center;
   `)};
-  ${miniPhone(css`
+  ${miniPhone(css`    
     display: none;    
   `)};
 `;

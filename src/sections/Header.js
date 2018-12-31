@@ -2,8 +2,8 @@ import React from 'react';
 
 import style from 'styled-components';
 
-import Menu from './Menu';
-import TopHeader from './TopHeader';
+import Menu from '../components/Menu';
+import TopHeader from '../components/TopHeader';
 
 import { zHeader } from '../utils/zIndex';
 

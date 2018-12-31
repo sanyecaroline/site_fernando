@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import styled from 'styled-components';
 
-import rem from '../utils/rem';
+import Svg from './Svg';
 
 const Link = styled.a`
   width: 30px;
@@ -23,12 +23,6 @@ const Link = styled.a`
     -webkit-transition: background-color 0.4s ease; 
   }  
 `;
-
-const Svg = styled.svg`
-  width: ${p => rem(Number(p.width))};
-  height: ${p => rem(Number(p.height))};    
-  top: 10px;
-`
 
 const FacebookIcon = () => (
   <Svg width="30" height="30" viewBox="-3 -3 30 30 ">
