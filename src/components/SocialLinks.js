@@ -25,7 +25,7 @@ const Link = styled.a`
 `;
 
 const FacebookIcon = () => (
-  <Svg width="30" height="30" viewBox="-3 -3 30 30 ">
+  <Svg width="30" height="30" viewBox="-3 -3 30 30">
     <title>Facebook Dr. Fernando Franco</title>
     <path 
       fill="#fff"

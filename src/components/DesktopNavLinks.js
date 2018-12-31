@@ -3,7 +3,9 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import rem from '../utils/rem';
-import { navbarHeight } from '../utils/sizes';
+import { navbarHeight } from '../consts/sizes';
+
+import textMenus from '../consts/textMenus';
 
 //Com tab está ficando uma "borda" no link, retirar
 
@@ -43,11 +45,7 @@ const NavLink = styled.a`
 function NavLinks(props) {
   return (
     <Fragment>
-      <NavLink href='#section1'>A Clinica</NavLink>      
-      <NavLink href='#section2'>Profissionais</NavLink> 
-      <NavLink href='#section3'>Especialidades</NavLink> 
-      <NavLink href='#section3'>Fonoaudiologia</NavLink> 
-      <NavLink href='#section3'>Blog</NavLink> 
+      {Object.keys(textMenus).map(key => <NavLink key={key} href={textMenus[key].link}>{textMenus[key].text}</NavLink>)}      
     </Fragment>
   );
 }

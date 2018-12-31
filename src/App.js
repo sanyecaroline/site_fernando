@@ -5,14 +5,40 @@ import Evaluation from './sections/Evaluation';
 import Header from './sections/Header';
 
 
-class App extends Component {
-  render() {
-    return (
+class App extends Component {  
+  constructor() {
+    super();
+    this.state = {
+      width: window.innerWidth,
+      isMobile: false,
+    };    
+  }
+
+  componentWillMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange);
+    this.handleWindowSizeChange();
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+  
+  handleWindowSizeChange = () => {    
+    let uagent = navigator.userAgent.toLowerCase();
+    let isMobile = (uagent.search("iphone") > -1 || uagent.search("ipad") > -1 
+    || uagent.search("android") > -1 || uagent.search("blackberry") > -1
+    || uagent.search("webos") > -1) || uagent.search("IEMobile") > -1
+    || window.innerWidth <= 1000;
+    this.setState({ width: window.innerWidth, isMobile: isMobile });    
+  };
+
+  render() {    
+    return (      
       <div className="App">
-        <Header />
+        {/*<p>Mobile {JSON.stringify(this.state.isMobile)}  User: {JSON.stringify(navigator.userAgent.toLowerCase())}</p>*/}
+        <Header isMobile={this.state.isMobile}/>
         <Invisalign />
-        <Evaluation />
-        <Itero />        
+        <Evaluation />           
       </div>
     );
   }

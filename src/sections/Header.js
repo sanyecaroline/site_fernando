@@ -1,11 +1,14 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import style from 'styled-components';
 
-import Menu from '../components/Menu';
 import TopHeader from '../components/TopHeader';
+import DesktopMenu from '../components/DesktopMenu';
+import MobileMenu from '../components/MobileMenu';
 
-import { zHeader } from '../utils/zIndex';
+import { zHeader } from '../consts/zIndex';
 
 const HeaderContainer = style.header`
   height: auto;  
@@ -13,12 +16,19 @@ const HeaderContainer = style.header`
 `;
 
 function Header(props) {
+  const { isMobile } = props;
+  console.log(isMobile);
   return (    
     <HeaderContainer>
       <TopHeader />
-      <Menu />
+      {!isMobile && <DesktopMenu /> }
+      {isMobile && <MobileMenu />}
     </HeaderContainer>
   );
 }
 
 export default Header;
+
+Header.propTypes = {
+  isMobile: PropTypes.bool.isRequired,
+}
