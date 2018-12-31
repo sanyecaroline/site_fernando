@@ -3,6 +3,8 @@ import Itero from './sections/Itero';
 import Invisalign from './sections/Invisalign';
 import Evaluation from './sections/Evaluation';
 import Header from './sections/Header';
+import Tips from './sections/Tips';
+import Contact from './sections/Contact';
 
 
 class App extends Component {  
@@ -38,7 +40,10 @@ class App extends Component {
         {/*<p>Mobile {JSON.stringify(this.state.isMobile)}  User: {JSON.stringify(navigator.userAgent.toLowerCase())}</p>*/}
         <Header isMobile={this.state.isMobile}/>
         <Invisalign />
-        <Evaluation />           
+        <Evaluation />
+        <Itero /> 
+        <Tips />
+        <Contact />       
       </div>
     );
   }
