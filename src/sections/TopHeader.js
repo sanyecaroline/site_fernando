@@ -25,27 +25,38 @@ const Container = styled.div`
   `)};  
 `;
 
+Container.displayName = 'Container';
+
 const TopHeaderRight = styled.div`
   padding: 10px 20px;  
   display: flex;  
-  align-items: right;
+  align-items: center;
   justify-content: flex-end;
   width: 75%;
+  ${mobile(css`
+    width: 100%;
+    justify-content: center;
+  `)};
   ${miniPhone(css`
-    display: none;
+    display: none;    
   `)};
 `;
+
+TopHeaderRight.displayName = 'TopHeaderRight';
 
 const TopHeaderLeft = styled.div`
   padding: 10px 20px;  
   display: flex;  
-  align-items: right;
+  align-items: center;
   justify-content: flex-start;
   width: 25%;
-  ${miniPhone(css`
+  ${mobile(css`
     width: 100%;
-  `)};
+    justify-content: center;
+  `)};  
 `;
+
+TopHeaderLeft.displayName = 'TopHeaderLeft';
 
 
 function TopHeader(props) {
