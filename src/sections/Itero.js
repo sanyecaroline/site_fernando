@@ -5,7 +5,7 @@ import ImageiTero from '../media/images/iTero.jpg'
 const Title = styled.h1`
   font-size: 2.5em;
   text-align: center;
-  color: #00004d;
+  color: ${props => props.theme.secondary.main}
 `;
 
 const DivContainer = styled.div`

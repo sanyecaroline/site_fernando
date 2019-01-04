@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const DivContainer = styled.div`  
   height: 116px;
-  background-color: #293c67;
+  background-color: ${props => props.theme.primary.main};
   padding-top: 20px;
   padding-bottom: 20px;
 `;
@@ -29,7 +29,7 @@ const TextContainer = styled.h2`
   display: inline;
   line-height: 47px;
   margin-right: 40px;
-  color: #ffffff;
+  color: ${props => props.theme.secondary.main};
   letter-spacing: 0px;
   text-transform: none;
 `;
@@ -41,15 +41,16 @@ const Button = styled.a`
   vertical-align:middle;
   overflow:hidden;
   text-decoration:none;
-  color:rgb(255, 255, 255);
-  background-color:rgb(23, 60, 124);
+  color: ${props => props.theme.secondary.main};
+  background-color: ${props => props.theme.primary.light};
   text-align:center;
   cursor:pointer;
   white-space:nowrap;
+  transition: background-color 0.4s ease;
   &:hover {
-    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    color:#000!important;
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);    
     background-color:rgb(255, 255, 255)!important;    
+    transition: background-color 0.4s ease;
   };
 `;
 

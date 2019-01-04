@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { ThemeProvider } from 'styled-components';
+
 import Itero from './sections/Itero';
 import Invisalign from './sections/Invisalign';
 import Evaluation from './sections/Evaluation';
@@ -6,6 +8,7 @@ import Header from './sections/Header';
 import Tips from './sections/Tips';
 import Contact from './sections/Contact';
 
+import theme from './consts/theme';
 
 class App extends Component {  
   constructor() {
@@ -36,15 +39,17 @@ class App extends Component {
 
   render() {    
     return (      
-      <div className="App">
-        {/*<p>Mobile {JSON.stringify(this.state.isMobile)}  User: {JSON.stringify(navigator.userAgent.toLowerCase())}</p>*/}
-        <Header isMobile={this.state.isMobile}/>
-        <Invisalign />
-        <Evaluation />
-        <Itero /> 
-        <Tips />
-        <Contact />       
-      </div>
+      <ThemeProvider theme={theme}>
+        <div className="App">        
+          {/*<p>Mobile {JSON.stringify(this.state.isMobile)}  User: {JSON.stringify(navigator.userAgent.toLowerCase())}</p>*/}
+          <Header isMobile={this.state.isMobile}/>
+          <Invisalign />
+          <Evaluation />
+          <Itero /> 
+          <Tips />
+          <Contact />               
+        </div>
+      </ThemeProvider>
     );
   }
 }

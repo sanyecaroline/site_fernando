@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import ImageInvisalign from '../media/images/invisalign.jpg'
 import Title from '../components/Title';
 
+import Logo from '../components/Logo';
+
 const DivContainer = styled.div`  
   height: 900px;
 `;
@@ -33,6 +35,10 @@ const TextContainer = styled.p`
   margin-bottom: 30px;
 `;
 
+const LogoRight = styled.div`
+  float: right;
+`;
+
 function Invisalign() {
   return (  
     <DivContainer id="invisalign"> 
@@ -40,7 +46,10 @@ function Invisalign() {
         <Title>
           Invisalign
         </Title>
-        <Image src={ImageInvisalign} align="right"/>
+        <LogoRight>        
+          <Logo height={90} width={350} withSubText/>
+        </LogoRight>
+
         <TextContainer>
           Invisalign é o sistema de tratamento ortodôntico mais avançado do mundo, pois utiliza de vários recursos tecnológicos de última geração para o diagnóstico, 
           planejamento e tratamento de adolescentes, adultos e até pessoas idosas. 

@@ -3,7 +3,8 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import Svg from './Svg';
-
+//#04539d
+//#3b5998
 const Link = styled.a`
   width: 30px;
   height: 30px;
@@ -11,14 +12,13 @@ const Link = styled.a`
   text-align: center;
   border-style: solid;
   border-width: 0px;
-  border-color: #323232;
-  background-color: #168cd0;
+  background-color: ${props => props.theme.primary.light};
   color: #ffffff;  
   margin: 5px; 
   transition: background-color 0.4s ease;
   -webkit-transition: background-color 0.4s ease; 
   &:hover {
-    background-color: #04539d;
+    background-color: ${props => props.hoverBgColor };
     transition: background-color 0.4s ease;
     -webkit-transition: background-color 0.4s ease; 
   }  
@@ -73,17 +73,18 @@ const YoutubeIcon = () => (
     />
   </Svg>
 )
+//instagram #cc181e, #cd486b, #8a3ab9, #e95950
 
 function SocialLinks(props) {
   return (
     <Fragment>
-      <Link href='https://www.facebook.com/drfernandofranco' target='_blank'>
+      <Link hoverBgColor={'#3b5998'} href='https://www.facebook.com/drfernandofranco' target='_blank'>
         <FacebookIcon />
       </Link>
-      <Link href='https://www.instagram.com/drfernandofranco' target='_blank'>
+      <Link hoverBgColor={'#cd486b'} href='https://www.instagram.com/drfernandofranco' target='_blank'>
         <InstagramIcon />
       </Link>
-      <Link href='https://www.youtube.com' target='_blank'>
+      <Link hoverBgColor={'#cc181e'} href='https://www.youtube.com' target='_blank'>
         <YoutubeIcon />
       </Link>
     </Fragment>

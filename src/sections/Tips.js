@@ -15,7 +15,7 @@ const DivContainer = styled.div`
 
 const DivTitle = styled.div`
   margin-bottom: 40px;
-  display: block;;
+  display: block;
 `;
 
 const Divs = styled.div`
@@ -50,15 +50,15 @@ const SubItem = styled.div`
 `;
 
 const SubItemText = styled.p`
-  color: #333;
+  color: ${props => props.theme.primary.main};
 `;
 
 const SubItemLink = styled.a`
-  color: rgb(1, 139, 211);
+  color: ${props => props.theme.secondary.main};
 `;
 
 const Separator = styled.hr`
-  background-color: #232323;
+  background-color: ${props => props.theme.primary.main};
   width: 60px;
   height: 5px;  
 `;

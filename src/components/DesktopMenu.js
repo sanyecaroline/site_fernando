@@ -1,10 +1,9 @@
 import React from 'react';
 
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import DesktopNavLinks from './DesktopNavLinks';
 import Logo from './Logo';
-import { mobile } from '../utils/media';
 
 const Container = styled.div`
   display: flex;  
@@ -13,9 +12,6 @@ const Container = styled.div`
   align-items: center;
   justify-content: flex-end;  
   width: 100%;
-  ${mobile(css`
-    display: none;  
-  `)};  
 `;
 
 const ContainerLogo = styled.div`
@@ -40,7 +36,7 @@ function DesktopMenu(props) {
   return (
     <Nav>
       <ContainerLogo>
-        <Logo />
+        <Logo height={60} width={300} />
       </ContainerLogo>
       <Container>
         <DesktopNavLinks />

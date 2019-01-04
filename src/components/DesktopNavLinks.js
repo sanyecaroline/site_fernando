@@ -1,52 +1,61 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
-
-import rem from '../utils/rem';
-import { navbarHeight } from '../consts/sizes';
 
 import textMenus from '../consts/textMenus';
 
 //Com tab está ficando uma "borda" no link, retirar
 
-const NavLink = styled.a`  
-  display: inline-block;  
+const Ul = styled.ul`
+  list-style: none;
+  text-align: center;
+`;
+
+const Li = styled.li`
+  display: inline-block;
+`;
+
+const A = styled.a`
+  display: block;
+  padding: 15px;
   text-decoration: none;
-  line-height: ${rem(navbarHeight)};  
-  cursor: pointer;  
-  letter-spacing: ${rem(1.0)};  
-  padding: 0px 20px;  
-  position: relative;  
-  color: #000;  
-  transition: color 0.3s ease;
-  -webkit-transition: color 0.3s ease; 
-  
-  &:hover {
-    color: #018bd3;
-  }  
-  &:after{
-    content: "";
-    display: block;
-    width: 0;
-    border-bottom: 2px solid;
-    margin: 0 auto;
-    transition:all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    color: #018bd3;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+  position: relative;
+  &, &::after, &::before {
+    transition: all .5s;
   }
-  &:hover::after{
-    width: 30%;
-    transition:all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    color: #018bd3;
-  } 
+  &:hover {
+    color: #767676;
+  }
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+  }
+  &:hover::after {
+    width: 100%;
+  }
 `;
 
 function NavLinks(props) {
   return (
-    <Fragment>
-      {Object.keys(textMenus).map(key => <NavLink key={key} href={textMenus[key].link}>{textMenus[key].text}</NavLink>)}      
-    </Fragment>
+    <Ul>
+      {Object.keys(textMenus).map(key => (
+        <Li key={key}>
+          <A href={textMenus[key].link}>{textMenus[key].text}</A>
+        </Li>
+      ))}      
+    </Ul>
   );
 }
 
