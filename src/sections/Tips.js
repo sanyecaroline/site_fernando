@@ -50,15 +50,15 @@ const SubItem = styled.div`
 `;
 
 const SubItemText = styled.p`
-  color: ${props => props.theme.primary.main};
+  color: ${props => props.theme.pallete.primary.main};
 `;
 
 const SubItemLink = styled.a`
-  color: ${props => props.theme.secondary.main};
+  color: ${props => props.theme.pallete.secondary.main};
 `;
 
 const Separator = styled.hr`
-  background-color: ${props => props.theme.primary.main};
+  background-color: ${props => props.theme.pallete.primary.main};
   width: 60px;
   height: 5px;  
 `;

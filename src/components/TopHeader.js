@@ -11,7 +11,7 @@ const Container = styled.div`
   position: relative;
   display: flex;  
   flex-direction: row;
-  background-color: ${props => props.theme.primary.main};
+  background-color: ${props => props.theme.pallete.primary.main};
   border-bottom: 0px none;
   color: #ffffff;  
   line-height: 38px;  
@@ -33,7 +33,7 @@ const TopHeaderRight = styled.div`
   align-items: center;
   justify-content: flex-end;
   width: 75%;
-  color: ${props => props.theme.secondary.main};
+  color: ${props => props.theme.pallete.white};
   ${mobile(css`
     width: 100%;
     justify-content: center;

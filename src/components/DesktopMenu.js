@@ -46,5 +46,3 @@ function DesktopMenu(props) {
 }
 
 export default DesktopMenu;
-
-//display: -webkit-flex;

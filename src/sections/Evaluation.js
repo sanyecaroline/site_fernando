@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const DivContainer = styled.div`  
   height: 116px;
-  background-color: ${props => props.theme.primary.main};
+  background-color: ${props => props.theme.pallete.primary.main};
   padding-top: 20px;
   padding-bottom: 20px;
 `;
@@ -29,7 +29,7 @@ const TextContainer = styled.h2`
   display: inline;
   line-height: 47px;
   margin-right: 40px;
-  color: ${props => props.theme.secondary.main};
+  color: ${props => props.theme.pallete.secondary.main};
   letter-spacing: 0px;
   text-transform: none;
 `;
@@ -41,8 +41,8 @@ const Button = styled.a`
   vertical-align:middle;
   overflow:hidden;
   text-decoration:none;
-  color: ${props => props.theme.secondary.main};
-  background-color: ${props => props.theme.primary.light};
+  color: ${props => props.theme.pallete.secondary.main};
+  background-color: ${props => props.theme.pallete.primary.light};
   text-align:center;
   cursor:pointer;
   white-space:nowrap;

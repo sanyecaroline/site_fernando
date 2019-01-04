@@ -19,8 +19,8 @@ const A = styled.a`
   display: block;
   padding: 15px;
   text-decoration: none;
-  color: #aaa;
-  font-weight: 800;
+  color: ${props => props.theme.pallete.menuColor.primary};
+  font-weight: 500;
   text-transform: uppercase;
   margin: 0 10px;
   position: relative;
@@ -28,7 +28,7 @@ const A = styled.a`
     transition: all .5s;
   }
   &:hover {
-    color: #767676;
+    color: ${props => props.theme.pallete.menuColor.secondary}
   }
   &::after {
     position: absolute;
@@ -39,7 +39,7 @@ const A = styled.a`
     width: 0%;
     content: '.';
     color: transparent;
-    background: #aaa;
+    background: ${props => props.theme.pallete.menuColor.primary};
     height: 1px;
   }
   &:hover::after {

@@ -12,7 +12,7 @@ const Link = styled.a`
   text-align: center;
   border-style: solid;
   border-width: 0px;
-  background-color: ${props => props.theme.primary.light};
+  background-color: ${props => props.theme.pallete.primary.light};
   color: #ffffff;  
   margin: 5px; 
   transition: background-color 0.4s ease;
