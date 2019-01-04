@@ -8,5 +8,8 @@ export default {
     light: '#c49d4f',
     main: '#be933c',
     dark: '#ab8436'
-  }
+  },
+  white: '#ffffff',
+  black: '#000000'
+
 }
