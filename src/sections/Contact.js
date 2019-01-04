@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import LogoFernando from '../media/images/logoFernando.jpg';
+import LogoFernando from '../media/images/logoFernando.png';
+import LogoInspirar from '../media/images/logoInspirar.png';
 import {PhoneIcon, MailIcon, LocationIcon} from '../components/ContactIcons';
 
 const DivContainer = styled.div`  
@@ -29,14 +30,13 @@ const DivContact = styled.div`
 `;
 
 const Image = styled.img`
-  float: left;
-  width: 120px;
-  height: 80px;
+  float: left;  
 `;
 
 const DivWidgetText = styled.div`
   margin-bottom: 40px;
-  display: block;;
+  display: block;
+  height: 140px;
 `; 
 
 const List = styled.div`
@@ -81,7 +81,7 @@ function Contact() {
         <DivContact>
           <DivWidgetText>
             <p>
-              <Image src={LogoFernando}></Image>
+              <Image src={LogoFernando}width='300px' height='100px'></Image>
             </p>
           </DivWidgetText>
           <DivWidgetText>
@@ -124,8 +124,9 @@ function Contact() {
         <DivContact>
         <DivWidgetText>
             <p>
-              <Image src={LogoFernando}></Image>
+              <Image src={LogoInspirar} width='250px' height='80px'></Image>
             </p>
+            <br />
           </DivWidgetText>
           <DivWidgetText>
             <List>

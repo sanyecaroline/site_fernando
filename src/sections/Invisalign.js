@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import ImageInvisalign from '../media/images/invisalign.jpg'
 import Title from '../components/Title';
 
 import Logo from '../components/Logo';
@@ -24,9 +23,6 @@ const Video = styled.div`
   max-width: 1300px;
 `;
 
-const Image = styled.img`
-  float: right;
-`;
 
 const TextContainer = styled.p`
   font-size: 1em;

@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Title from '../components/Title';
-import TipsImage1 from '../media/images/tips1.jpg';
-import TipsImage2 from '../media/images/tips2.jpg';
-import TipsImage3 from '../media/images/tips3.jpg';
-import TipsImage4 from '../media/images/tips4.jpg';
-
+import tipsItens from '../consts/tipItens';
 
 const DivContainer = styled.div`    
   height: 550px;
@@ -73,50 +69,19 @@ function Tips() {
         <Separator />
       </DivTitle> 
       <Divs>  
-        <Item>
+      {Object.keys(tipsItens).map(key => (
+        <Item key={key}>
           <SubItemImage>
-            <img src={TipsImage1}/>
+            <img src={tipsItens[key].image} alt={tipsItens[key].alt}/>
           </SubItemImage>
           <SubItem>
             <SubItemText>
-              Alinhadores removíveis: Quais são as principais vantagens? &nbsp;
+              {tipsItens[key].text}
               <SubItemLink>[...] Saiba mais</SubItemLink>
             </SubItemText>
           </SubItem>
-        </Item>
-        <Item>
-          <SubItemImage>
-            <img src={TipsImage3}/>
-          </SubItemImage>
-          <SubItem>
-            <SubItemText>
-            Como funciona o tratamento com os alinhadores dentários? &nbsp;
-              <SubItemLink>[...] Saiba mais</SubItemLink>
-            </SubItemText>
-          </SubItem>
-        </Item>
-        <Item>
-          <SubItemImage>
-            <img src={TipsImage2}/>
-          </SubItemImage>
-          <SubItem>
-            <SubItemText>
-            Aparelhos ortodônticos estéticos: Conheça os principais modelos. &nbsp;
-              <SubItemLink>[...] Saiba mais</SubItemLink>
-            </SubItemText>
-          </SubItem>
-        </Item>        
-        <Item>
-          <SubItemImage>
-            <img src={TipsImage4}/>
-          </SubItemImage>
-          <SubItem>
-            <SubItemText>
-            Conheça o Invisalign: a forma mais estética, confortável e previsível existente. &nbsp;
-              <SubItemLink>[...] Saiba mais</SubItemLink>
-            </SubItemText>
-          </SubItem>
-        </Item>
+        </Item>       
+      ))} 
       </Divs>      
     </DivContainer>                      
   );
