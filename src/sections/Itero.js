@@ -1,49 +1,83 @@
 import React from 'react';
-import styled from 'styled-components';
-import ImageiTero from '../media/images/iTero.jpg'
+import styled, { css} from 'styled-components';
+import ImageiTero from '../media/images/iTero.jpg';
+import { desktop2, desktop1 } from '../utils/media';
 
-const Title = styled.h1`
-  font-size: 2.5em;
-  text-align: center;
-  color: ${props => props.theme.pallete.secondary.main}
+const AboutDiv = styled.div`
+  align-self: flex-end;
+  background: white;
+  width: 80%;  
+  display: flex; 
+  z-index: 20;    
+  padding: 15px;  
+  margin: 0 auto;         
+  ${desktop2(css`
+    align-self: auto;
+  `)};   
 `;
 
 const DivContainer = styled.div`
-  height: 400px;
-  width: 80%;
-  margin: auto;
   display: flex;
+  ${desktop2(css`
+    display: block;
+  `)};
 `;
 
-const DivFundo = styled.div` 
-  height: 400px;
+const ImgContainer = styled.div`
+  width: 100%;    
   display: flex;
-  align-itens: center;
-`;
-
-const Divs = styled.div`
-  width: 50%;
   margin: 0 auto;
+  max-height: 650px;
+  ${desktop2(css`
+    max-width: 400px;
+    max-height: 400px; 
+  `)};
+  ${desktop1(css`
+    width: 50%;        
+    display: flex;
+    float: right;
+    padding: 1em; 
+  `)}
 `;
 
 const Image = styled.img`
-  margin: 50px 0 0;
+  max-width: 100%;    
+  margin: 0 auto;
+  object-fit: cover;
 `;
 
 const TextContainer = styled.p`
-  font-size: 1em;
-  text-align: center;
-  color: #333333;
+  display: flex;      
+  ${desktop1(css`
+    padding: 2em 3em 0 3em;
+    display: flex;
+    line-height: 2;
+    text-align: center;
+  `)};
+`;
+
+const Text = styled.div`
+  width: 100%;
+  font-weight: lighter; 
+  margin: 0 auto;
+  text-align: center;   
+  color: ${props => props.theme.pallete.primary.main};
+`;
+
+const TextH2 = styled.h3`
+  margin: 0;
+  font-size: 2.827em;   
 `;
 
 function Itero() {
   return (  
-    <DivFundo>
-    <DivContainer id="iTero"> 
-      <Divs>
-        <Title>
+    <AboutDiv>
+    <Text id="iTero"> 
+        <TextH2>
           Conheça o iTero
-        </Title>
+        </TextH2>
+        <div />    
+        <DivContainer> 
         <TextContainer>
           Na Clínica Fernando Franco, utilizamos o scanner ortodôntico mais inovador do mercado.
           <br />
@@ -53,12 +87,12 @@ function Itero() {
           <br />
           Ou seja, muito diferente dos métodos tradicionais.
         </TextContainer>
-      </Divs>
-      <Divs>
-        <Image src={ImageiTero} />
-      </Divs>
-    </DivContainer>
-    </DivFundo>                      
+        <ImgContainer >
+          <Image src={ImageiTero} />      
+        </ImgContainer>
+        </DivContainer>            
+    </Text>
+    </AboutDiv>                      
   );
 }
 
