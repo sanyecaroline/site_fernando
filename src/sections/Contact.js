@@ -1,15 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
-import LogoFernando from '../media/images/logoFernando.png';
-import LogoInspirar from '../media/images/logoInspirar.png';
+import styled, { css } from 'styled-components';
 import {PhoneIcon, MailIcon, LocationIcon} from '../components/ContactIcons';
+import contacts from '../consts/contacts';
+import { mobile } from '../utils/media';
 
 const DivContainer = styled.div`  
   height: 320px;
   background-color: rgba(242,243,248,1);
   padding-top: 70px;
   padding-bottom: 70px;
-  z-index: 3;
+  z-index: 3; 
+  ${mobile(css`
+    height: 800px;
+  `)}
 `;
 
 const Divs = styled.div`
@@ -18,6 +21,11 @@ const Divs = styled.div`
   margin: 0 auto;
   text-align: center; 
   z-index: 3;
+  display: flex;
+  flex-direction: row;
+  ${mobile(css`
+    flex-direction: column;
+  `)}
 `;
 
 const DivContact = styled.div`
@@ -25,8 +33,10 @@ const DivContact = styled.div`
   margin-left: 5%;
   z-index: 2;
   width: 45%;
-  display: flex;
-  flex-direction: column;
+  ${mobile(css`
+    width: 100%;
+    height: 400px;
+  `)}
 `;
 
 const Image = styled.img`
@@ -37,6 +47,10 @@ const DivWidgetText = styled.div`
   margin-bottom: 40px;
   display: block;
   height: 140px;
+  ${mobile(css`
+    height: 110px;
+    margin-bottom: 10px;
+  `)}
 `; 
 
 const List = styled.div`
@@ -78,10 +92,11 @@ function Contact() {
   return (  
     <DivContainer id="contact"> 
       <Divs>  
-        <DivContact>
+      {Object.keys(contacts).map(key => (
+        <DivContact key={key}>
           <DivWidgetText>
             <p>
-              <Image src={LogoFernando}width='300px' height='100px'></Image>
+              <Image src={contacts[key].image} width={contacts[key].widthImage} height={contacts[key].heightImage}></Image>
             </p>
           </DivWidgetText>
           <DivWidgetText>
@@ -91,7 +106,7 @@ function Contact() {
                  <PhoneIcon /> 
                 </Icon>
                 <TextItem>
-                  (37) 3215-8363
+                  {contacts[key].phone1}
                 </TextItem>
               </Item>
               <Item>
@@ -99,7 +114,7 @@ function Contact() {
                  <PhoneIcon /> 
                 </Icon>
                 <TextItem>
-                  (37) 3215-8363
+                {contacts[key].phone2}
                 </TextItem>
               </Item>
               <Item>
@@ -107,7 +122,7 @@ function Contact() {
                  <MailIcon /> 
                 </Icon>
                 <TextItem>
-                  contato@fernandofranco.com.br
+                {contacts[key].email}
                 </TextItem>
               </Item>
               <Item>
@@ -115,56 +130,13 @@ function Contact() {
                  <LocationIcon /> 
                 </Icon>
                 <TextItem>
-                  R. São Paulo, 486 - Centro, Divinópolis - MG, 35500-006
+                {contacts[key].address}
                 </TextItem>
               </Item>
             </List>
           </DivWidgetText>
         </DivContact>
-        <DivContact>
-        <DivWidgetText>
-            <p>
-              <Image src={LogoInspirar} width='250px' height='80px'></Image>
-            </p>
-            <br />
-          </DivWidgetText>
-          <DivWidgetText>
-            <List>
-              <Item>
-                <Icon>
-                 <PhoneIcon /> 
-                </Icon>
-                <TextItem>
-                  (37) 3215-8363
-                </TextItem>
-              </Item>
-              <Item>
-                <Icon>
-                 <PhoneIcon /> 
-                </Icon>
-                <TextItem>
-                  (37) 3215-8363
-                </TextItem>
-              </Item>
-              <Item>
-                <Icon>
-                 <MailIcon /> 
-                </Icon>
-                <TextItem>
-                  contato@fernandofranco.com.br
-                </TextItem>
-              </Item>
-              <Item>
-                <Icon>
-                 <LocationIcon /> 
-                </Icon>
-                <TextItem>
-                  R. São Paulo, 486 - Centro, Divinópolis - MG, 35500-006
-                </TextItem>
-              </Item>
-            </List>
-          </DivWidgetText>
-        </DivContact>
+      ))} 
       </Divs>      
     </DivContainer>                      
   );

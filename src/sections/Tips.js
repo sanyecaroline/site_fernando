@@ -1,12 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Title from '../components/Title';
 import tipsItens from '../consts/tipItens';
+import { mobile } from '../utils/media';
 
 const DivContainer = styled.div`    
   height: 550px;
   padding-top: 20px;
   padding-bottom: 20px;
+  ${mobile(css`
+    height: 1000px;
+  `)};
 `;
 
 const DivTitle = styled.div`
@@ -37,12 +41,18 @@ const Item = styled.div`
 const SubItemImage = styled.div`
   width: 150px;
   height: 150px;
+  ${mobile(css`
+    padding-left: 20px;
+  `)};
 `;
 
 const SubItem = styled.div`
   width: 300px;
   height: 180px;
   padding-left: 50px;
+  ${mobile(css`
+    width: 200px;
+  `)};
 `;
 
 const SubItemText = styled.p`
