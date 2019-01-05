@@ -16,6 +16,7 @@ class App extends Component {
     super();
     this.state = {
       width: window.innerWidth,
+      height: window.innerHeight,
       isMobile: false,
     };    
   }
@@ -42,14 +43,15 @@ class App extends Component {
     return (      
       <ThemeProvider theme={theme}>
         <div className="App">        
-          {/*<p>Mobile {JSON.stringify(this.state.isMobile)}  User: {JSON.stringify(navigator.userAgent.toLowerCase())}</p>*/}
+          {/*<p>Mobile {JSON.stringify(this.state.isMobile)}  User: {JSON.stringify(navigator.userAgent.toLowerCase())}</p>
+          <p>{window.innerHeight}&nbsp;&nbsp;{window.innerWidth}</p>*/}
           <Header isMobile={this.state.isMobile}/>
           <Invisalign />
           <About />
           <Evaluation />
           <Itero /> 
           <Tips />
-          <Contact />               
+          <Contact />    
         </div>
       </ThemeProvider>
     );

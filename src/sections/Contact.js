@@ -11,7 +11,10 @@ const DivContainer = styled.div`
   padding-bottom: 70px;
   z-index: 3; 
   ${mobile(css`
-    height: 800px;
+    height: 700px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
   `)}
 `;
 
@@ -34,8 +37,9 @@ const DivContact = styled.div`
   z-index: 2;
   width: 45%;
   ${mobile(css`
-    width: 100%;
-    height: 400px;
+    width: 95%;
+    height: 350px;
+    margin-left: 1%; 
   `)}
 `;
 
@@ -49,7 +53,7 @@ const DivWidgetText = styled.div`
   height: 140px;
   ${mobile(css`
     height: 110px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   `)}
 `; 
 
@@ -68,8 +72,10 @@ const Item = styled.div`
   width:100%;  
   padding:8px 16px;
   float:left;
-  border:none;
-  line-height: 25px;  
+  border:none;  
+  ${mobile(css`
+    max-width: 90%;
+  `)}
 `;
 
 const Icon = styled.i`
@@ -85,6 +91,10 @@ const Icon = styled.i`
 const TextItem = styled.span`
   padding-left: 15px;
   display: inline-block;
+  ${mobile(css`
+    max-width: 100vw;
+    padding-left: 2%;
+  `)}
 `;
 
 

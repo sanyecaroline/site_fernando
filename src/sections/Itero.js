@@ -30,7 +30,7 @@ const ImgContainer = styled.div`
   max-height: 650px;
   ${desktop2(css`
     max-width: 400px;
-    max-height: 400px; 
+    max-height: 250px; 
   `)};
   ${desktop1(css`
     width: 50%;        

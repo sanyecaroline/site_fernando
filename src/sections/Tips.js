@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import Title from '../components/Title';
 import tipsItens from '../consts/tipItens';
-import { mobile } from '../utils/media';
+import { mobile, miniPhone } from '../utils/media';
 
 const DivContainer = styled.div`    
   height: 550px;
@@ -42,8 +42,12 @@ const SubItemImage = styled.div`
   width: 150px;
   height: 150px;
   ${mobile(css`
-    padding-left: 20px;
+    padding-left: 10px;
+    width: 100px;
   `)};
+  ${miniPhone(css`
+    width: 50px;
+  `)}
 `;
 
 const SubItem = styled.div`
@@ -51,7 +55,8 @@ const SubItem = styled.div`
   height: 180px;
   padding-left: 50px;
   ${mobile(css`
-    width: 200px;
+    width: 150px;
+    padding-left: 70px;
   `)};
 `;
 

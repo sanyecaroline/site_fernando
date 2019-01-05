@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-
+import styled, { css } from 'styled-components';
+import { mobile } from '../utils/media';
 
 const DivContainer = styled.div`  
   height: 116px;
@@ -22,6 +22,9 @@ const Divs = styled.div`
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  ${mobile(css`
+    padding: 0px 0px;
+  `)};
 `;
 
 const TextContainer = styled.h2`

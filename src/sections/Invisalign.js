@@ -1,16 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
-import Title from '../components/Title';
-
+import styled, { css } from 'styled-components';
+import { mobile, desktop2 } from '../utils/media';
 import Logo from '../components/Logo';
 
+import rem from '../utils/rem';
+
 const DivContainer = styled.div`  
-  height: 900px;
+  height: ${rem(1020)};
+  ${mobile(css`
+    height: ${rem(1150)};
+  `)};
 `;
 
 const Divs = styled.div`
   margin: 0 auto;
-  width: 50%;
+  width: 50%;  
+  ${desktop2(css`
+    width: 75%;
+  `)};
+  ${mobile(css`
+    width: 80%;
+  `)};
 `;
 
 const Video = styled.div`
@@ -23,6 +33,14 @@ const Video = styled.div`
   max-width: 1300px;
 `;
 
+const Title = styled.h1`
+  font-size: 2.5em;
+  text-align: center;
+  color: ${props => props.theme.pallete.primary.main};
+  ${mobile(css`
+    display: none;
+  `)};
+`;
 
 const TextContainer = styled.p`
   font-size: 1em;
