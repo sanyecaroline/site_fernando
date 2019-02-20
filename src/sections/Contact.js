@@ -35,9 +35,9 @@ const DivContact = styled.div`
   float: left;
   margin-left: 5%;
   z-index: 2;
-  width: 45%;
+  width: 43%;
   ${mobile(css`
-    width: 95%;
+    width: 90%;
     height: 350px;
     margin-left: 1%; 
   `)}

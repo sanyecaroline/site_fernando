@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import textMenus from '../consts/textMenus';
 
+import { Link } from "react-scroll";
+
 //Com tab está ficando uma "borda" no link, retirar
 
 const Ul = styled.ul`
@@ -15,7 +17,7 @@ const Li = styled.li`
   display: inline-block;
 `;
 
-const A = styled.a`
+const A = styled(Link)`
   display: block;
   padding: 15px;
   text-decoration: none;
@@ -24,6 +26,7 @@ const A = styled.a`
   text-transform: uppercase;
   margin: 0 10px;
   position: relative;
+  cursor: pointer;
   &, &::after, &::before {
     transition: all .5s;
   }
@@ -52,7 +55,15 @@ function NavLinks(props) {
     <Ul>
       {Object.keys(textMenus).map(key => (
         <Li key={key}>
-          <A href={textMenus[key].link}>{textMenus[key].text}</A>
+          <A 
+            to={textMenus[key].link}
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={1000}
+          >
+            {textMenus[key].text}
+          </A>
         </Li>
       ))}      
     </Ul>

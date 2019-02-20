@@ -1,7 +1,8 @@
 export default [
-  { text: 'A Clinica', link: '#section1'},
-  { text: 'Profissionais', link: '#section1'},
-  { text: 'Especialidades', link: '#section1'},
-  { text: 'Fonoaudiologia', link: '#section1'},
-  { text: 'Blog', link: '#section1'},
+  { text: 'Invisalign', link: 'invisalign'},
+  { text: 'Sobre mim', link: 'about'},  
+  { text: 'Agenda sua avaliação', link: 'evaluation'},
+  { text: 'iTero', link: 'iTero'},
+  { text: 'Dicas', link: 'tips'},
+  { text: 'Contato' , link: 'contact' }
 ];

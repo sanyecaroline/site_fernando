@@ -1,5 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { Link } from "react-scroll";
+
 import { mobile } from '../utils/media';
 
 const DivContainer = styled.div`  
@@ -37,7 +39,7 @@ const TextContainer = styled.h2`
   text-transform: none;
 `;
 
-const Button = styled.a`
+const Button = styled(Link)`
   border:none;
   display:inline-block;
   padding:8px 16px;
@@ -64,7 +66,15 @@ function Evaluation() {
         <TextContainer>
           Agende já sua avaliação
         </TextContainer> 
-        <Button href="#contact">EU QUERO!</Button>            
+        <Button 
+          to='contact'
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={1000}
+        >
+          EU QUERO!
+        </Button>            
       </Divs>      
     </DivContainer>                      
   );

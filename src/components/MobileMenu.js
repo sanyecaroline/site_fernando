@@ -21,19 +21,19 @@ const activeCss = css`
 `;
 
 const IconMenuMobile = styled.span`
-  background-color: #232323;
-  width: 15px;
+  background-color: ${props => props.theme.pallete.primary.main};
+  width: 22px;
   height: 2px;
   display: inline-block;
   position: relative;  
   border-radius: 2px;
   top: -1px;
-  left: 7px;
+  left: 0px;
   -webkit-transition: background-color 0.5s;
   -moz-transition: background-color 0.5s;
   transition: background-color 0.5s; 
   &::before, &::after {
-    background-color: #232323;    
+    background-color: ${props => props.theme.pallete.primary.main};    
     content: '';
     width: 100%;
     height: 100%;
@@ -45,10 +45,10 @@ const IconMenuMobile = styled.span`
     transition: transform .4s, top .4s, background-color 0.5s width 0.2s;    
   }
   &::before{
-    top: -5px;
+    top: -6px;
   }
   &::after {
-    top: 5px;
+    top: 6px;
   }
   ${props => props.active && activeCss}
 `;
@@ -69,7 +69,10 @@ const ContainerLogo = styled.div`
   align-items: center;
   justify-content: flex-start;  
   margin: 0 auto;
+  padding: 8px;
 `;
+
+ContainerLogo.displayName = 'ContainerLogo';
 
 const ContainerIconMenu = styled.div`
   display: flex;
@@ -77,7 +80,7 @@ const ContainerIconMenu = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;  
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
 `;
 
@@ -92,6 +95,7 @@ const ContainerTopMenu = styled.div`
 
 const Nav = styled.nav`
   text-transform: uppercase;
+  margin-top: 7px;
 `;
 
 class MobileMenu extends Component {
@@ -109,7 +113,7 @@ class MobileMenu extends Component {
       <Nav>
         <ContainerTopMenu>
           <ContainerLogo>
-            <Logo />
+            <Logo  height={60} width={300} />
           </ContainerLogo>   
           <ContainerIconMenu>
             <ClickedLink onClick={this.handleActive}>

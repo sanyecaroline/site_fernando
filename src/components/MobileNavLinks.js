@@ -3,25 +3,25 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
+import { Link } from "react-scroll";
+
 import rem from '../utils/rem';
-
 import textMenus from '../consts/textMenus';
-
 import { mobileMenuHeight } from '../consts/sizes'
 
-const NavLink = styled.a`  
+const NavLink = styled(Link)`  
   display: inline-block;  
   text-decoration: none;
   cursor: pointer;  
   letter-spacing: ${rem(0.9)};  
   padding-left: 20px;  
   position: relative;  
-  color: #474747;  
-  width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  color: ${props => props.theme.pallete.primary.main};  
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #efefef;
-  font-size: 11px;  
+  font-size: 12px;  
 `;
 
 const ContainerMenuList = styled.div`
@@ -39,12 +39,25 @@ const ContainerMenuList = styled.div`
   transition: opacity 600ms, visibility 600ms, max-height 600ms;
   max-height: ${props => !props.active ? '0' : `${mobileMenuHeight}px`};    
   line-height: 10px;
+  padding-bottom: 11px;
 `;
 
 function MobileNavLinks(props) {  
   return (
     <ContainerMenuList active={props.active}>
-      {Object.keys(textMenus).map(key => <NavLink onClick={props.handleActive} key={key} href={textMenus[key].link}>{textMenus[key].text}</NavLink>)}      
+      {Object.keys(textMenus).map(key => (
+        <NavLink 
+          onClick={props.handleActive} 
+          key={key} 
+          to={textMenus[key].link}
+          spy={true}
+          smooth={true}
+          offset={-200}
+          duration={1000}
+        >
+          {textMenus[key].text}
+        </NavLink>
+      ))}      
     </ContainerMenuList>
   );
 }
