@@ -7,7 +7,7 @@ import images from '../consts/images';
 import rem from '../utils/rem';
 
 import { desktopImagesHeight, mobileImagesHeight } from '../consts/sizes';
-import { mobile } from '../utils/media';
+import { mobile, desktop1, desktop2 } from '../utils/media';
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -23,12 +23,13 @@ const Slide = styled.div`
   box-sizing: border-box;  
   display: ${props => props.active === true ? 'block' : 'none'};  
   animation-name: fade;
-  animation-duration: 2.5s;    
+  animation-duration: 3.5s;    
   background-repeat: no-repeat;
   background-image: url(${props => props.image});
   background-size: cover;
   background-position: center; 
   height: ${rem(desktopImagesHeight)};
+  width: 100%;
   ${mobile(css`
     height: ${rem(mobileImagesHeight)};
   `)};
@@ -37,6 +38,24 @@ const Slide = styled.div`
     to {opacity: 1}
   }
 `;
+
+const Text = styled.h2`
+  position: absolute;
+  left: 216px;
+  top: 180px;
+  text-align: left;
+  color: ${props => props.theme.pallete.primary.main};
+  ${mobile(css`
+    visibility: hidden;
+  `)};
+  ${desktop1(css`
+    left: 150px;
+  `)};
+  ${desktop2(css`
+    left: 80px;
+  `)};
+`;
+
 
 const next = css`
   right: 0;
@@ -117,7 +136,9 @@ class Images extends Component {
         key={key} 
         active={Number(key) === this.state.activeIndex}
         image={images[key].path}
-      />
+      >
+      <Text>{images[key].text}</Text>
+      </Slide>
     ))
   );
 

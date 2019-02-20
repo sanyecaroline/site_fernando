@@ -19,7 +19,7 @@ export const miniPhone = inner => css`
 `;
 
 export const desktop1 = inner => css`
-  @media (min-width: ${1224 / 16}em) {
+  @media (max-width: ${1480 / 16}em) {
     ${inner};
   }
 `;
