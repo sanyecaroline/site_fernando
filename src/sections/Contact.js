@@ -4,8 +4,6 @@ import {PhoneIcon, MailIcon, LocationIcon} from '../components/ContactIcons';
 import contacts from '../consts/contacts';
 import { mobile } from '../utils/media';
 
-import rem from '../utils/rem';
-
 const DivContainer = styled.div`  
   height: 200px;
   background-color: rgba(242,243,248,1);
@@ -19,10 +17,10 @@ const DivContainer = styled.div`
   align-content: center;
   flex-direction: row;
   ${mobile(css`
-    height: 600px;
+    height: 620px;
     padding-top: 0px;
     padding-bottom: 0px;
-    margin-bottom: -30px;
+    margin-bottom: -20px;
     width: 100%;
     flex-direction: column;
     text-align: center
@@ -44,7 +42,7 @@ const DivContact = styled.div`
 const Image = styled.img`
   padding-top: ${props => props.paddingTop};
   ${mobile(css`
-    padding-top: 0px;
+    margin-top: 0px;
   `)}
 `;
 
@@ -54,8 +52,7 @@ const DivWidgetText = styled.div`
   padding-top: ${props => props.paddingTop};
   ${mobile(css`
     height: 110px;
-    margin-bottom: 0px;
-    padding-top: 0px;
+    margin-bottom: 0px;        
   `)}
 `; 
 
