@@ -56,8 +56,7 @@ const TextContainer = styled.p`
   `)};
 `;
 
-const Text = styled.div`
-  width: 100%;
+const Text = styled.div`  
   font-weight: lighter; 
   margin: 0 auto;
   text-align: center;   
