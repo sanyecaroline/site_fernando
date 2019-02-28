@@ -5,16 +5,23 @@ import contacts from '../consts/contacts';
 import { mobile } from '../utils/media';
 
 const DivContainer = styled.div`  
-  height: 320px;
+  height: 200px;
   background-color: rgba(242,243,248,1);
   padding-top: 70px;
   padding-bottom: 70px;
   z-index: 3; 
+  text-align: center; 
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
   ${mobile(css`
     height: 700px;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
+    flex-direction: column;
   `)}
 `;
 
@@ -44,12 +51,11 @@ const DivContact = styled.div`
 `;
 
 const Image = styled.img`
-  float: left;  
+  
 `;
 
 const DivWidgetText = styled.div`
   margin-bottom: 40px;
-  display: block;
   height: 140px;
   ${mobile(css`
     height: 110px;
@@ -89,8 +95,7 @@ const Icon = styled.i`
 `; 
 
 const TextItem = styled.span`
-  padding-left: 15px;
-  display: inline-block;
+  padding-left: 15px;  
   ${mobile(css`
     max-width: 100vw;
     padding-left: 2%;
@@ -101,14 +106,9 @@ const TextItem = styled.span`
 function Contact() {
   return (  
     <DivContainer id="contact"> 
-      <Divs>  
       {Object.keys(contacts).map(key => (
         <DivContact key={key}>
-          <DivWidgetText>
-            <p>
-              <Image src={contacts[key].image} width={contacts[key].widthImage} height={contacts[key].heightImage}></Image>
-            </p>
-          </DivWidgetText>
+          <Image src={contacts[key].image} width={contacts[key].widthImage} height={contacts[key].heightImage}></Image>                      
           <DivWidgetText>
             <List>
               <Item>
@@ -146,8 +146,7 @@ function Contact() {
             </List>
           </DivWidgetText>
         </DivContact>
-      ))} 
-      </Divs>      
+      ))}      
     </DivContainer>                      
   );
 }

@@ -12,6 +12,7 @@ import About from './sections/About';
 import Images from './sections/Images';
 
 import theme from './consts/theme';
+import Footer from './sections/Footer';
 
 const GlobalStyle = createGlobalStyle`
   html: {
@@ -112,6 +113,7 @@ class App extends Component {
           <Itero /> 
           <Tips />        
           <Contact />    
+          <Footer />
           {this.state.isScrolled &&
           <Button onClick={() => scroll.scrollToTop()}>
             <Arrow/>
