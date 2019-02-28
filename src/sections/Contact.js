@@ -4,37 +4,28 @@ import {PhoneIcon, MailIcon, LocationIcon} from '../components/ContactIcons';
 import contacts from '../consts/contacts';
 import { mobile } from '../utils/media';
 
+import rem from '../utils/rem';
+
 const DivContainer = styled.div`  
   height: 200px;
   background-color: rgba(242,243,248,1);
   padding-top: 70px;
   padding-bottom: 70px;
   z-index: 3; 
-  text-align: center; 
+  text-align: left; 
   z-index: 3;
   display: flex;
   align-items: center;
   align-content: center;
   flex-direction: row;
   ${mobile(css`
-    height: 700px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    height: 600px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: -30px;
     width: 100%;
     flex-direction: column;
-  `)}
-`;
-
-const Divs = styled.div`
-  width: 100%;  
-  max-width: 1060px;
-  margin: 0 auto;
-  text-align: center; 
-  z-index: 3;
-  display: flex;
-  flex-direction: row;
-  ${mobile(css`
-    flex-direction: column;
+    text-align: center
   `)}
 `;
 
@@ -42,24 +33,29 @@ const DivContact = styled.div`
   float: left;
   margin-left: 5%;
   z-index: 2;
-  width: 43%;
+  width: 43%;    
   ${mobile(css`
     width: 90%;
-    height: 350px;
-    margin-left: 1%; 
+    height: 310px;
+    margin-left: 0px;     
   `)}
 `;
 
 const Image = styled.img`
-  
+  padding-top: ${props => props.paddingTop};
+  ${mobile(css`
+    padding-top: 0px;
+  `)}
 `;
 
 const DivWidgetText = styled.div`
   margin-bottom: 40px;
   height: 140px;
+  padding-top: ${props => props.paddingTop};
   ${mobile(css`
     height: 110px;
     margin-bottom: 0px;
+    padding-top: 0px;
   `)}
 `; 
 
@@ -108,8 +104,8 @@ function Contact() {
     <DivContainer id="contact"> 
       {Object.keys(contacts).map(key => (
         <DivContact key={key}>
-          <Image src={contacts[key].image} width={contacts[key].widthImage} height={contacts[key].heightImage}></Image>                      
-          <DivWidgetText>
+          <Image paddingTop={contacts[key].paddingTopImg} src={contacts[key].image} width={contacts[key].widthImage} height={contacts[key].heightImage}></Image>                      
+          <DivWidgetText paddingTop={contacts[key].paddingTopDiv}>
             <List>
               <Item>
                 <Icon>

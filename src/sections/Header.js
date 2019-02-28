@@ -16,7 +16,7 @@ const HeaderContainer = style.header`
 `;
 
 function Header(props) {
-  const { isMobile } = props;  
+  const { isMobile } = props;    
   return (    
     <HeaderContainer>
       <TopHeader />

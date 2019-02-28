@@ -14,6 +14,8 @@ import Images from './sections/Images';
 import theme from './consts/theme';
 import Footer from './sections/Footer';
 
+import { minDesktopWidth } from './consts/sizes';
+
 const GlobalStyle = createGlobalStyle`
   html: {
     width: 100%;
@@ -96,7 +98,7 @@ class App extends Component {
     let isMobile = (uagent.search("iphone") > -1 || uagent.search("ipad") > -1 
     || uagent.search("android") > -1 || uagent.search("blackberry") > -1
     || uagent.search("webos") > -1) || uagent.search("IEMobile") > -1
-    || window.innerWidth <= 1000;
+    || window.innerWidth < minDesktopWidth;
     this.setState({ width: window.innerWidth, height: window.innerHeight, isMobile: isMobile });    
   };
 
