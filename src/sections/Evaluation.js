@@ -30,13 +30,16 @@ const Divs = styled.div`
   flex-direction: row;    
   ${mobile(css`
     padding: 0px 0px;
-    flex-direction: column;
+    flex-direction: column;    
   `)};
 `;
 
 const TextContainer = styled.h2`
   font: 700 41px "Lato","Open Sans","Arial",sans-serif;  
-  color: ${props => props.theme.pallete.secondary.main};    
+  color: ${props => props.theme.pallete.secondary.main};   
+  ${mobile(css`
+    font: 700 31px "Lato","Open Sans","Arial",sans-serif;  
+  `)}; 
 `;
 
 const DivTextContainer = styled.div`
@@ -47,7 +50,6 @@ const DivTextContainer = styled.div`
     width:100%;
     text-align: center;
     padding-right: 0px;
-    margin-bottom: -20px;
   `)};
 `;
 
@@ -57,7 +59,7 @@ const DivButtonContainer = styled.div`
   width: 40%;
   ${mobile(css`
     width:100%;    
-    text-align: center;
+    flex-direction: inherit;
     height: 20px;
   `)};
 `;

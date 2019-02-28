@@ -10,6 +10,7 @@ import Tips from './sections/Tips';
 import Contact from './sections/Contact';
 import About from './sections/About';
 import Images from './sections/Images';
+import Video from './sections/Video';
 
 import theme from './consts/theme';
 import Footer from './sections/Footer';
@@ -113,7 +114,8 @@ class App extends Component {
           <About />
           <Evaluation />
           <Itero /> 
-          <Tips />        
+          <Tips /> 
+          <Video />       
           <Contact />    
           <Footer />
           {this.state.isScrolled &&
