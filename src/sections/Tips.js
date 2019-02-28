@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import Title from '../components/Title';
 import tipsItens from '../consts/tipItens';
 import { mobile, miniPhone } from '../utils/media';
+import Modal from './Modal';
 
 const DivContainer = styled.div`    
   height: 550px;
@@ -66,6 +67,7 @@ const SubItemText = styled.p`
 
 const SubItemLink = styled.a`
   color: ${props => props.theme.pallete.secondary.main};
+  cursor: pointer;
 `;
 
 const Separator = styled.hr`
@@ -74,32 +76,67 @@ const Separator = styled.hr`
   height: 5px;  
 `;
 
-function Tips() {
-  return (  
-    <DivContainer id="tips">       
-      <DivTitle>
-        <Title>
-          Dicas sobre os Alinhadores Dentários Invisalign          
-        </Title>  
-        <Separator />
-      </DivTitle> 
-      <Divs>  
-      {Object.keys(tipsItens).map(key => (
-        <Item key={key}>
-          <SubItemImage>
-            <img src={tipsItens[key].image} alt={tipsItens[key].alt}/>
-          </SubItemImage>
-          <SubItem>
-            <SubItemText>
-              {tipsItens[key].text}
-              <SubItemLink>[...] Saiba mais</SubItemLink>
-            </SubItemText>
-          </SubItem>
-        </Item>       
-      ))} 
-      </Divs>      
-    </DivContainer>                      
-  );
+class Tips extends Component {
+
+  state = { 
+    show: false, 
+    text: '', 
+    completeText: '', 
+    image: ''    
+  }
+
+  showModal = (key) => {            
+    this.setState({ show: true, 
+                    text: tipsItens[key].text,
+                    completeText : tipsItens[key].completeText,
+                    image : tipsItens[key].image });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+
+  renderTips() {
+    return Object.keys(tipsItens).map(key => (
+      <Item key={key}>
+        <SubItemImage>
+          <img src={tipsItens[key].image} alt={tipsItens[key].alt}/>
+        </SubItemImage>
+        <SubItem>
+          <SubItemText>
+            {tipsItens[key].text}
+            <SubItemLink onClick={() => this.showModal(key)} >[...] Saiba mais</SubItemLink>
+          </SubItemText>
+        </SubItem>
+      </Item>       
+    ))
+  }
+
+  render(){
+    const { text, completeText, image, show } = this.state;
+
+    return (  
+      <DivContainer id="tips">       
+        <DivTitle>
+          <Title>
+            Dicas sobre os Alinhadores Dentários Invisalign          
+          </Title>  
+          <Separator />
+        </DivTitle> 
+        <Divs>  
+        <Modal show={show} 
+                        handleClose={this.hideModal} 
+                        text={text}
+                        completeText={completeText}
+                        image={image}
+                        >                   
+        </Modal>
+        {this.renderTips()} 
+        </Divs>      
+      </DivContainer>                      
+    );
+  }
+
 }
 
 export default Tips;
